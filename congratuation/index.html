@@ -23,10 +23,16 @@
       <br>감사합니다.
     </div>
     <div class="wrap">
-    <div id="gallery" class="gallery" aria-label="이미지 갤러리"></div>
+
+         <!-- ✅ 갤러리 열기 버튼 (처음 화면에 보임) -->
+<button id="openGalleryBtn" class="open-gallery-btn" type="button">갤러리 입장하기</button>
+
+<!-- ✅ 3x3 갤러리 (처음엔 숨김) -->
+    <div id="gallery"class="gallery hidden"aria-label="이미지 갤러리"></div>
 
 
-    <div>📍생일파티에 초대되셨나요?</div>
+
+    <div><br>📍생일파티에 초대되셨나요?</div>
     <button id="mapBtn" class="map-btn" type="button"> <<클릭하여 위치보기>></button>
 
 
@@ -34,7 +40,7 @@
     <div id="pwModal" class="modal" aria-hidden="true">
       <div class="modal-card" role="dialog" aria-modal="true">
         <div class="modal-title">비밀번호 입력</div>
-        <p class="modal-desc">오시는 길을 보려면 비밀번호를 입력해 주세요.</p>
+        <p class="modal-desc">궁금하면 500원</p>
 
         <input id="pwInput" class="modal-input" type="password" inputmode="numeric" placeholder="비밀번호" />
 

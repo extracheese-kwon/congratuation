@@ -4,7 +4,7 @@ const NAVER_MAP_URL = "https://naver.me/Gn0yAgEt";
 
 // ✅ 3x3 (총 9개가 이상적이지만, 너가 넣는 만큼 렌더됨)
 const images = [
-  "image/1.png","image/2.png","image/3.png",
+  "image/1.png","image/2.jpg","image/3.png",
   "image/4.png","image/5.png","image/6.png",
   "image/7.png","image/8.png","image/9.png",
 ];
@@ -25,9 +25,19 @@ const fallback = (n) =>
     </svg>
   `);
 
+  
 document.addEventListener("DOMContentLoaded", () => {
+  
   // ===== 1) 3x3 갤러리 렌더링 + 클릭 시 확대 모달 =====
-  const gallery = document.getElementById("gallery");
+  const openGalleryBtn = document.getElementById("openGalleryBtn") ;
+  const gallery = document.getElementById("gallery")
+      openGalleryBtn.addEventListener("click", () => {
+        openGalleryBtn.classList.add("fade-out");
+        setTimeout(() => {
+          openGalleryBtn.style.display = "none";
+          gallery.classList.remove("hidden");
+        }, 600); 
+      });
   const imgModal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImg");
 
@@ -63,16 +73,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== 2) 위치보기 버튼 → 비밀번호 모달 → 일치 시 네이버 URL 호출 =====
   const mapBtn = document.getElementById("mapBtn");
+if (mapBtn) {
+  mapBtn.classList.add("blink");
+
+  // 1500ms마다 on/off
+  setInterval(() => {
+    mapBtn.classList.toggle("off");
+  }, 200);
+}
   const pwModal = document.getElementById("pwModal");
   const pwInput = document.getElementById("pwInput");
   const pwError = document.getElementById("pwError");
   const pwCancel = document.getElementById("pwCancel");
   const pwOk = document.getElementById("pwOk");
 
+
   if (!mapBtn) console.error("id='mapBtn' 요소가 없어요.");
   if (!pwModal || !pwInput || !pwError || !pwCancel || !pwOk) {
     console.error("비밀번호 모달 요소(id)가 일부 없어요.", { pwModal, pwInput, pwError, pwCancel, pwOk });
   }
+
+
+  
 
   // 버튼은 항상 보이게 (원하면 CSS로 처리해도 됨)
   if (mapBtn) mapBtn.style.display = "inline-block";
