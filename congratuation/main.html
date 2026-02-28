@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Birthday Invitation</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- 이미지 확대 모달 -->
+<div id="imgModal" class="img-modal">
+  <img id="modalImg">
+</div>
+
+<body>
+  
+    <div class="title">♡Happy Birthday♡</div>
+    <div class="info"> 
+      1993.03.08 태어난... 어쩌구저쩌구
+      <br>닭띠 중에 최고 
+      <br>잘생겼어요
+      <br>감사합니다.
+    </div>
+    <div class="wrap">
+    <div id="gallery" class="gallery" aria-label="이미지 갤러리"></div>
+
+
+    <div>📍생일파티에 초대되셨나요?</div>
+    <button id="mapBtn" class="map-btn" type="button"> <<클릭하여 위치보기>></button>
+
+
+    <!-- 모달 -->
+    <div id="pwModal" class="modal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true">
+        <div class="modal-title">비밀번호 입력</div>
+        <p class="modal-desc">오시는 길을 보려면 비밀번호를 입력해 주세요.</p>
+
+        <input id="pwInput" class="modal-input" type="password" inputmode="numeric" placeholder="비밀번호" />
+
+        <div class="modal-row">
+          <button id="pwCancel" class="btn btn-cancel" type="button">취소</button>
+          <button id="pwOk" class="btn btn-ok" type="button">확인</button>
+        </div>
+        <div id="pwError" class="modal-error"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>
